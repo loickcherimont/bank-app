@@ -138,3 +138,14 @@ npm run build
 
 
 ## Features
+- Colors: indigo, slate, black, white!
+- Keep general layout from mobile on bigger screen (use the same for settings)
+- Use a styled table for actions
+- Move routelink into a toggle menu
+- Add icon for deposit and withdraw (2 different ones)
+- Style the checkboxes
+- If you can add some animations
+
+## Next upkeep
+- Login form 2 checking (FRONT/BACK)
+- Add graphs using Chart.js or canvas

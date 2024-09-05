@@ -171,12 +171,13 @@ export default {
 }
 </script>
 <template>
-  <div class='h-screen w-full'>
+  <div class='flex flex-col items-center justify-around h-screen w-full'>
     <!-- HEADER -->
     <Top property='John Doe' :currentAccount="userMoney" />
 
     <!-- To display all types of errors -->
-    <p class='text-red-500'>{{ displayError
+     <!-- Fix: Prevent error to display when there is no one -->
+    <p class='text-red-500 border border-red-500 rounded bg-red-100'>{{ displayError
       }}</p>
 
 
@@ -186,7 +187,7 @@ export default {
     <TransferForm :formEvent="handleSubmit" :processInput="handleInput" v-model="transferAmount" :mode="mode" />
 
       <!-- Actions and history -->
-    <ul class='text-lg actions'>
+    <ul class='flex flex-col items-center text-lg actions'>
       <h3 class='font-bold text-xl'>ACTIONS</h3>
       <li v-if="actions.length === 0" class='italic text-slate-600'>
         No actions done...
