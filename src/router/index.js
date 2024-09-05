@@ -3,10 +3,13 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import HomeView from '@/views/HomeView.vue';
 import SettingView from '@/views/SettingView.vue';
+import NotFound from '@/views/NotFound.vue'
 
 const routes = [
-    { path: '/', name: 'home', component: HomeView},
-    { path: '/settings', name: 'settings', component: SettingView}
+    { path: '/', name: 'home', component: HomeView },
+    { path: '/home', redirect: '/'},
+    { path: '/settings', name: 'settings', component: SettingView },
+    { path: '/:pathMatch(.*)*', name: 'not found', component: NotFound }
 ]
 
 export const router = createRouter({
