@@ -12,9 +12,9 @@ export default {
       error: {
         isError: false,
         empty: false,
-        forbiddenChar: false, 
+        forbiddenChar: false,
         overdraftReached: false,
-        bankCeilingReached: false, 
+        bankCeilingReached: false,
         maxReached: false,
       },
       success: false,
@@ -23,14 +23,23 @@ export default {
         { id: 'deposit', value: 'Deposit' },
         { id: 'withdrawal', value: 'Withdrawal' }
       ],
+      /** 
+       * Fetch all actions done on the account
+       * Withdrawal or deposit
+       * This will contains <action> type Object
+       */
       actions: [],
     }
   },
 
   computed: {
-    actionHistory() {
-      return (this.mode === 'Withdrawal') ? 'You withdrew' : 'You deposited';
-    },
+
+    /**
+     * Handle all errors
+     * 
+     * @function displayError
+     * @returns {string} - Specific error
+     */
     displayError() {
 
       const { empty, forbiddenChar, overdraftReached, bankCeilingReached, maxReached } = this.error;
@@ -87,27 +96,28 @@ export default {
     },
 
     /**
-     * Deposit or withdraw
-     * The amount of user
-     * Display action and reset input/action after 3s
+     * Deposit or withdraw money
+     * Depending on the mode
      * 
-     * @param mode - Transfer mode
+     * @param {string} mode - Transfer mode
+     * 
      */
     handlerTransfer(mode) {
       let preTransfer;
 
       switch (mode) {
         case 'Withdrawal':
+          /** A checker to verify if user is allowed to do the transaction */
           preTransfer = this.userMoney - Number(this.transferAmount);
 
 
-          // Check if the bank limit is reached
+          /** Verify if bank ceiling is exceeded */
           if (Number(this.transferAmount) > BANK_CEILING) {
             this.error.bankCeilingReached = true;
             this.error.isError = true;
             break;
           }
-          // Check if overdraft is not reached
+          /** Verify if user can withdraw money */
           else if (preTransfer < ACCOUNT_MINIMUM) {
             this.error.overdraftReached = true;
             this.error.isError = true;
@@ -123,9 +133,13 @@ export default {
           }
 
 
-        default: // for Deposit
+        case 'Deposit':
           preTransfer = this.userMoney + Number(this.transferAmount);
 
+          /** 
+           * Verify if user exceeds the maximum limit
+           * Of the account
+           */
           if (preTransfer > ACCOUNT_MAXIMUM) {
             this.error.maxReached = true;
             this.error.isError = true;
@@ -142,7 +156,13 @@ export default {
       }
     },
 
-    // Update <actions>[]
+    /**
+     * Update  <actions> state
+     * That show all activities user did
+     * If there aren't any error
+     * 
+     * @param {string} mode - Transfer mode
+     */
     handleAction(mode) {
       if (this.error.isError) return;
 
@@ -150,7 +170,7 @@ export default {
       let action = {};
       action.id = Date.now();
 
-      // Get current human date 
+      /** Get human readable format of date and time */
       action.date = new Intl.DateTimeFormat('en-GB', {
         dateStyle: 'short',
         timeStyle: 'short',
@@ -159,8 +179,7 @@ export default {
         action.message = (this.mode === 'Withdrawal') ? 'You withdrew' : 'You deposited';
       action.mode = mode.toUpperCase();
       action.amount = this.transferAmount;
-      this.actions = [action, ...this.actions]
-      this.actions
+      this.actions = [action, ...this.actions];
     }
 
   },
@@ -176,17 +195,17 @@ export default {
     <Top property='John Doe' :currentAccount="userMoney" />
 
     <!-- To display all types of errors -->
-     <!-- Fix: Prevent error to display when there is no one -->
+    <!-- Fix: Prevent error to display when there is no one -->
     <p class='text-red-500 border border-red-500 rounded bg-red-100'>{{ displayError
       }}</p>
 
 
     <!-- Modes for transfer -->
-    <Modes v-model="mode"/>
+    <Modes v-model="mode" />
 
     <TransferForm :formEvent="handleSubmit" :processInput="handleInput" v-model="transferAmount" :mode="mode" />
 
-      <!-- Actions and history -->
+    <!-- Actions -->
     <ul class='flex flex-col items-center text-lg actions'>
       <h3 class='font-bold text-xl'>ACTIONS</h3>
       <li v-if="actions.length === 0" class='italic text-slate-600'>
