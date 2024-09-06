@@ -15,7 +15,7 @@ export default {
     <form @submit.prevent="formEvent" class='flex flex-col'>
 
         <div class=' flex flex-col gap-y-7 h-40'>
-            <label for='transfer' class='font-bold text-xl self-center mt-2'>Transfer Amount</label>
+            <label for='transfer' class='font-bold text-3xl self-center mt-2'>Transfer</label>
             <input type='text' :value="modelValue" placeholder='Enter the transfer amount' id='transfer'
                 @input="processInput"
                 @change="$emit('update:modelValue', $event.target.value)"
