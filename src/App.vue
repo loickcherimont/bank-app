@@ -29,7 +29,8 @@ export default {
         @click="toggleMenu">
         <span v-for="n in 3" class='border-b border-slate-300 h-0.5 w-1/2'></span>
       </div>
-      <div :class="{ 'hidden': isShow }">
+      <!-- Replace :class with v-show -->
+      <div v-show="isShow">
         <div class='text-xs flex flex-col md:flex-row space-y-3 md:space-x-10 p-3' ref='menu'>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/settings">Account Settings</RouterLink>
