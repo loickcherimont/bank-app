@@ -1,7 +1,7 @@
 # BankApp_Vue
 
 <!-- todo: add the preview after style -->
-![Preview](./github/preview.png "Login for Jobboard")
+![Preview](./github/preview.png "Main page")
 
 
 ## :information_source: About  
@@ -47,22 +47,22 @@ User can deposit/withdraw and check all its account data.
 > [!NOTE]
 > A better version with more features is coming... 🏗️
 
-## :test_tube: Features
-- Prevent user to login without authentication (Go)
-- Create a signup session
-- Redesign the responsive
-- Colors: indigo, slate, black, white!
-- Keep general layout from mobile on bigger screen (use the same for settings)
-- Use a styled table for actions
-- Move routelink into a toggle menu
-- Add icon for deposit and withdraw (2 different ones)
+## :test_tube: To Add
+
+### Front
 - Style the checkboxes
 - If you can add some animations
+- Add icon for deposit and withdraw (2 different ones)
+- Recode `<Top />` again to reuse it for `<SettingView />`
 
-### Next upkeep
+### Back
+- Prevent user to login without authentication (Go)
+- Create a signup session
+
+### Full-stack
+
 - Login form 2 checking (FRONT/BACK)
-- Add graphs using Chart.js or canvas
-
+- Add graphs using Chart.js or canvas -->
 
 
 ## :key: License
