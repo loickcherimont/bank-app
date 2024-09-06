@@ -7,9 +7,9 @@ import NotFound from '@/views/NotFound.vue'
 
 const routes = [
     { path: '/', name: 'home', component: HomeView },
-    { path: '/home', redirect: '/'},
+    { path: '/home', redirect: '/'}, /** Redirect user on Root page if path /home it's used */
     { path: '/settings', name: 'settings', component: SettingView },
-    { path: '/:pathMatch(.*)*', name: 'not found', component: NotFound }
+    { path: '/:pathMatch(.*)*', name: 'not found', component: NotFound } /** Catch all not allowed paths and move user on a NotFound page */
 ]
 
 export const router = createRouter({

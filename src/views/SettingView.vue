@@ -4,7 +4,7 @@ import { ACCOUNT_MAXIMUM, BANK_CEILING, OVERDRAFT } from '@/utils/data';
 export default {
     data() {
         return {
-            //  Not mutable account data
+            /** Not mutable account data */
             accountSettings: {
                 'Overdraft': OVERDRAFT,
                 'Bank Ceiling': BANK_CEILING,
