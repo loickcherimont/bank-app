@@ -16,9 +16,7 @@ export default {
 </script>
 <template>
     <div>
-        <h1 class='text-3xl font-bold'>Account Settings</h1>
-        <ul>
-            <li v-for="(value, parameter) in accountSettings">{{ parameter }} : {{ value }} €</li>
-        </ul>
+        <h1 class='text-3xl font-bold text-indigo-500'>Not Found</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident magni ab, quo laboriosam cupiditate alias odit explicabo aut non, quae dolore possimus, consectetur incidunt corrupti obcaecati. Magnam non sunt porro.</p>
     </div>
 </template>
