@@ -1,143 +1,56 @@
-<!-- 
-    MAIN TITLE
-    AppName : Replace with project name
-    Language : Replace with main language for the project
+# BankApp_Vue
 
-    Ex: Todo_ReactJS 
--->
-# AppName_Language
+<!-- todo: add the preview after style -->
+![Preview](./github/preview.png "Login for Jobboard")
 
-![Preview](https://placehold.co/500x300 "Preview of AppName")
 
-<!-- 
-    ABOUT
-    Short summary explaining the reasons of the project and tell about worked concepts
-
-    Ex: This is a Front-End project made with HTML, CSS for design and JavaScript to work on client-side validation (Constraint API)
--->
 ## :information_source: About  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus condimentum tortor a cursus.
+This is a piece of a futur Bank App (front-end only) made using Vue 3,  
 
-<!-- 
-    TOOLS
-    Short list of used tools with their versions
+my new tool JavaScript for end of August 2024.
 
-    Ex: 
-    - Go 1.18
-    - MySQL 8.0.29
-    - Bootstrap 5.2.0-beta1
--->
+
 ## :wrench: Tools
-- Lorem X.XX.XXX
-- Lorem X.XX.XXX
-- Lorem X.XX.XXX
+- [Vue 3.4.29](https://vuejs.org/ "Vue official website")
+- [Vue Router 4.4.3](https://router.vuejs.org/ 'Vue Router official website')
+- [Tailwindcss 3.4.10](https://tailwindcss.com/ "Tailwindcss official website")
+- [Vite 5.3.1](https://vitejs.dev/ "Vite official website")
 
-<!-- 
-    SETUP
-    Explain using command lines, the steps to follow to setup the project
-    At the end show, the expected result with a image   
 
-    Ex: 
-    1. Download the whole project `Travel` on your system
-    2. Open your terminal in `Travel`
-    ```
-    cd Travel
-    ```
-    3. In `Travel` directory, run:
-    ```
-    go run github.com/loickcherimont/Travel/main
-    ```
-    4. If there is no error. Go on your favorite browser and use this line in your URL address bar
-    ```
-    http://localhost:8080/travel
-    ```
-    5. Here you are! Welcome in the main page of the Web application
 
-    ![Main page of the application](assets/images/readme_images/mainpage.png)
--->
-
-## :inbox_tray: Setup
-
-## :warning: Prerequisites
-<!-- Bullet list or simple sentence explaining what contributor needs for this project -->
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-
-## :thinking: How does it run ?
-1. Lorem ipsum dolor sit amet, `consectetur` adipiscing elit
-2. Lorem **ipsum dolor sit** amet, consectetur adipiscing elit
+## :inbox_tray: Setup for contributions
+1. Open a terminal and paste these lines
+s
 ```bash
-# Lorem ipsum dolor sit amet
-# Lorem ipsum dolor sit amet
-# Lorem ipsum dolor sit amet
+git clone git@github.com:loickcherimont/bank-app
 ```
-3. Lorem ipsum dolor sit amet, *consectetur adipiscing elit*
 
-![ExpectResultsAfterSetup](https://placehold.co/300x200)
+2. Go in the project , fetch all dependencies and run it
 
-<!-- 
-    FEATURES
-    List of the main new features, fixes to bring on the project
-
-    Ex:
-    - Setup Night/Day mode
-    - Add animation when music is playing
--->
-
-## :test_tube: Features
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-- Lorem ipsum dolor sit amet
-
-<!-- 
-    LICENSE
-    Write Developer name with used license
- -->
- 
-## :key: License
-
-Developed by Loick Cherimont  
-
-Under [license_name]  
-
-Last edited on: YYYY-MM-DD
-
---
-
-# bank-app
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
+cd ./bank-app
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+3. Welcome on the login page
 
-```sh
-npm run build
-```
+## :warning: Prerequisites
+To run correctly this project, you'll need Vue Router : [Vue Router 4.4.3](https://router.vuejs.org/ 'Vue Router official website')
 
+## :thinking: How does it run ?
+This is a banking app.  
 
-## Features
+User can deposit/withdraw and check all its account data.
+
+> [!NOTE]
+> A better version with more features is coming... 🏗️
+
+## :test_tube: Features
+- Prevent user to login without authentication (Go)
+- Create a signup session
+- Redesign the responsive
 - Colors: indigo, slate, black, white!
 - Keep general layout from mobile on bigger screen (use the same for settings)
 - Use a styled table for actions
@@ -146,6 +59,17 @@ npm run build
 - Style the checkboxes
 - If you can add some animations
 
-## Next upkeep
+### Next upkeep
 - Login form 2 checking (FRONT/BACK)
 - Add graphs using Chart.js or canvas
+
+
+
+## :key: License
+
+Developed by Loick Cherimont  
+
+Under MIT License  
+
+Last edition : 2024-09-06
+
