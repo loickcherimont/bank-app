@@ -190,7 +190,7 @@ export default {
 }
 </script>
 <template>
-  <div class='flex flex-col items-center justify-around h-screen w-full'>
+  <div class='flex flex-col items-center justify-around h-full w-full'>
     <!-- HEADER -->
     <Top property='John Doe' :currentAccount="userMoney" />
 
@@ -206,14 +206,22 @@ export default {
     <TransferForm :formEvent="handleSubmit" :processInput="handleInput" v-model="transferAmount" :mode="mode" />
 
     <!-- Actions -->
-    <ul class='flex flex-col items-center text-lg actions'>
+    <ul class='flex flex-col items-center text-md mb-3'>
       <h3 class='font-bold text-xl'>ACTIONS</h3>
       <li v-if="actions.length === 0" class='italic text-slate-600'>
         No actions done...
       </li>
-      <li v-else v-for="action in actions" :key="action.id">
-        Action {{ action.id }} - {{ action.message }} {{ action.amount }} € | {{ action.mode }} | {{ action.date }}
-      </li>
+      <template v-else v-for="action in actions" :key="action.id">
+        <li class="flex justify-between gap-x-6 py-5 md:w-full border-b border-slate-300">
+          <div class="flex min-w-0 gap-x-4">
+            <div class="min-w-0 flex-auto">
+              <p class="text-sm md:text-md font-semibold leading-6 text-gray-900">{{ action.mode }} {{ action.amount }} €</p>
+              <p class="mt-1 truncate text-xs md:text-sm leading-5 text-gray-500">{{ action.message }} {{ action.amount }} € on {{ action.date }}</p>
+            </div>
+          </div>
+        </li>
+      </template>
     </ul>
+
   </div>
 </template>
